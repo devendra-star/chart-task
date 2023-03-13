@@ -108,7 +108,7 @@ const ScatterPlot: React.FC<{ data: any[] }> = ({ data }) => {
     ]
   };
 
-  return <ReactECharts option={options} style={{ height: '300px', width: '50%' }} />;
+  return <ReactECharts option={options} style={{ height: '300px', width: '100%' }} />;
 };
 
 export default ScatterPlot;

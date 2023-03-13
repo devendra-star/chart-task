@@ -9,7 +9,31 @@ const BarChart: React.FC<{ data: any[] }> = ({ data }) => {
     })
 
     console.log(dataAll[0]);
-
+    const markLineOpt = {
+        animation: false,
+        label: {
+            formatter: 'y = 0.5 * x + 3',
+            align: 'right'
+        },
+        lineStyle: {
+            type: 'solid'
+        },
+        tooltip: {
+            formatter: 'y = 0.5 * x + 3'
+        },
+        data: [
+            [
+                {
+                    coord: [0, 3],
+                    symbol: 'none'
+                },
+                {
+                    coord: [20, 13],
+                    symbol: 'none'
+                }
+            ]
+        ]
+    };
     const option = {
         xAxis: {
             type: 'category',
@@ -26,7 +50,10 @@ const BarChart: React.FC<{ data: any[] }> = ({ data }) => {
                 showBackground: true,
                 backgroundStyle: {
                     color: 'rgba(180, 180, 180, 0.2)'
-                }
+                },
+                markLine: markLineOpt
+
+
             }
         ]
     };
@@ -134,13 +161,16 @@ const BarChart: React.FC<{ data: any[] }> = ({ data }) => {
         ]
     };
 
-    return <div>
-        <ReactECharts option={option} style={{ height: '400px', width: '50%' }} />
-        <ReactECharts option={options} style={{ height: '400px', width: '50%' }} />
-        <ReactECharts option={options2} style={{ height: '400px', width: '50%' }} />
-        <ReactECharts option={options3} style={{ height: '400px', width: '50%' }} />
-        <ReactECharts option={options4} style={{ height: '400px', width: '50%' }} />
-        <ReactECharts option={options5} style={{ height: '400px', width: '50%' }} />
+    return <div style={{ display: "block", flexDirection: "row" }}>
+        <div style={{ display: "flex" }}>
+            <ReactECharts option={option} style={{ height: '300px', width: '50%' }} />
+            <ReactECharts option={options} style={{ height: '300px', width: '50%' }} /></div>
+        <div style={{ display: "flex" }}>
+            <ReactECharts option={options2} style={{ height: '300px', width: '50%' }} />
+            <ReactECharts option={options3} style={{ height: '300px', width: '50%' }} /> </div>
+        <div style={{ display: "flex" }}>
+            <ReactECharts option={options4} style={{ height: '300px', width: '50%' }} />
+            <ReactECharts option={options5} style={{ height: '300px', width: '50%' }} /> </div>
 
     </div>
 
