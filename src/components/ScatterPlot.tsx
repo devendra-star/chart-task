@@ -20,6 +20,7 @@ const ScatterPlot: React.FC<{ data: any[] }> = ({ data }) => {
       { "name": "Unknown", value: item["Unknown"] },
     ]
   })
+
   const markLineOpt = {
     animation: false,
     label: {
@@ -53,24 +54,18 @@ const ScatterPlot: React.FC<{ data: any[] }> = ({ data }) => {
     },
     grid: [
       { left: '7%', top: '7%', width: '38%', height: '38%' },
-      { right: '7%', top: '7%', width: '38%', height: '38%' },
-      { left: '7%', bottom: '7%', width: '38%', height: '38%' },
-      { right: '7%', bottom: '7%', width: '38%', height: '38%' }
+
     ],
     tooltip: {
       formatter: 'Group {a}: ({c})'
     },
     xAxis: [
       { gridIndex: 0, min: 0, max: 20 },
-      { gridIndex: 1, min: 0, max: 20 },
-      { gridIndex: 2, min: 0, max: 20 },
-      { gridIndex: 3, min: 0, max: 20 }
+
     ],
     yAxis: [
       { gridIndex: 0, min: 0, max: 15 },
-      { gridIndex: 1, min: 0, max: 15 },
-      { gridIndex: 2, min: 0, max: 15 },
-      { gridIndex: 3, min: 0, max: 15 }
+
     ],
     series: [
       {
@@ -81,34 +76,10 @@ const ScatterPlot: React.FC<{ data: any[] }> = ({ data }) => {
         data: dataAll[0],
         markLine: markLineOpt
       },
-      {
-        name: 'II',
-        type: 'scatter',
-        xAxisIndex: 1,
-        yAxisIndex: 1,
-        data: dataAll[1],
-        markLine: markLineOpt
-      },
-      {
-        name: 'III',
-        type: 'scatter',
-        xAxisIndex: 2,
-        yAxisIndex: 2,
-        data: dataAll[2],
-        markLine: markLineOpt
-      },
-      {
-        name: 'IV',
-        type: 'scatter',
-        xAxisIndex: 3,
-        yAxisIndex: 3,
-        data: dataAll[3],
-        markLine: markLineOpt
-      }
     ]
   };
 
-  return <ReactECharts option={options} style={{ height: '300px', width: '100%' }} />;
+  return <ReactECharts option={options} style={{ height: '300px', width: '200%' }} />;
 };
 
 export default ScatterPlot;

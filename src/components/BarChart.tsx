@@ -58,6 +58,10 @@ const BarChart: React.FC<{ data: any[] }> = ({ data }) => {
         ]
     };
 
+    tooltip: {
+        formatter: 'Group {a}: ({c})'
+    };
+
     const options = {
         xAxis: {
             type: 'category',
@@ -79,99 +83,9 @@ const BarChart: React.FC<{ data: any[] }> = ({ data }) => {
         ]
     };
 
-    const options2 = {
-        xAxis: {
-            type: 'category',
-            data: ["Alcohol", "Malic Acid", "Ash", "Alcalinity of ash", "Magnesium", "Total phenols", "Flavanoids", "Nonflavanoid phenols"
-                , "Color intensity", "Hue", "OD280/OD315 of diluted wines", "Unknown"]
-        },
-        yAxis: {
-            type: 'value'
-        },
-        series: [
-            {
-                data: dataAll[2],
-                type: 'bar',
-                showBackground: true,
-                backgroundStyle: {
-                    color: 'rgba(180, 180, 180, 0.2)'
-                }
-            }
-        ]
-    };
-    const options3 = {
-        xAxis: {
-            type: 'category',
-            data: ["Alcohol", "Malic Acid", "Ash", "Alcalinity of ash", "Magnesium", "Total phenols", "Flavanoids", "Nonflavanoid phenols"
-                , "Color intensity", "Hue", "OD280/OD315 of diluted wines", "Unknown"]
-        },
-        yAxis: {
-            type: 'value'
-        },
-        series: [
-            {
-                data: dataAll[3],
-                type: 'bar',
-                showBackground: true,
-                backgroundStyle: {
-                    color: 'rgba(180, 180, 180, 0.2)'
-                }
-            }
-        ]
-    };
-
-    const options4 = {
-        xAxis: {
-            type: 'category',
-            data: ["Alcohol", "Malic Acid", "Ash", "Alcalinity of ash", "Magnesium", "Total phenols", "Flavanoids", "Nonflavanoid phenols"
-                , "Color intensity", "Hue", "OD280/OD315 of diluted wines", "Unknown"]
-        },
-        yAxis: {
-            type: 'value'
-        },
-        series: [
-            {
-                data: dataAll[4],
-                type: 'bar',
-                showBackground: true,
-                backgroundStyle: {
-                    color: 'rgba(180, 180, 180, 0.2)'
-                }
-            }
-        ]
-    };
-    const options5 = {
-        xAxis: {
-            type: 'category',
-            data: ["Alcohol", "Malic Acid", "Ash", "Alcalinity of ash", "Magnesium", "Total phenols", "Flavanoids", "Nonflavanoid phenols"
-                , "Color intensity", "Hue", "OD280/OD315 of diluted wines", "Unknown"]
-        },
-        yAxis: {
-            type: 'value'
-        },
-        series: [
-            {
-                data: dataAll[5],
-                type: 'bar',
-                showBackground: true,
-                backgroundStyle: {
-                    color: 'rgba(180, 180, 180, 0.2)'
-                }
-            }
-        ]
-    };
 
     return <div style={{ display: "block", flexDirection: "row" }}>
-        <div style={{ display: "flex" }}>
-            <ReactECharts option={option} style={{ height: '300px', width: '50%' }} />
-            <ReactECharts option={options} style={{ height: '300px', width: '50%' }} /></div>
-        <div style={{ display: "flex" }}>
-            <ReactECharts option={options2} style={{ height: '300px', width: '50%' }} />
-            <ReactECharts option={options3} style={{ height: '300px', width: '50%' }} /> </div>
-        <div style={{ display: "flex" }}>
-            <ReactECharts option={options4} style={{ height: '300px', width: '50%' }} />
-            <ReactECharts option={options5} style={{ height: '300px', width: '50%' }} /> </div>
-
+        <ReactECharts option={option} style={{ height: '300px', width: '100%' }} />
     </div>
 
 
